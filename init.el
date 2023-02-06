@@ -1,6 +1,6 @@
 (require 'package)
 
-# run (package-install-selected-packages)
+;; run (package-install-selected-packages)
 (setq package-selected-packages
       '(vertico
 	use-package
@@ -59,3 +59,5 @@
 
 (use-package vertico
   :init (vertico-mode))
+
+(use-package magit)
