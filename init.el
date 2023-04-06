@@ -15,7 +15,8 @@
 (setq mac-option-key-is-meta nil
       mac-command-key-is-meta t
       mac-command-modifier 'meta
-      mac-option-modifier 'none)
+      mac-option-modifier 'none
+      dired-dwim-target t)
 
 (eval-when-compile
   (require 'use-package))
