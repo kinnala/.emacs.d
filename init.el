@@ -23,6 +23,9 @@
       mac-option-modifier 'none
       dired-dwim-target t)
 
+(global-set-key [134217895] 'beginning-of-buffer)
+(global-set-key [134217904] 'end-of-buffer)
+
 (eval-when-compile
   (require 'use-package))
 
