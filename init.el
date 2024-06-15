@@ -8,9 +8,14 @@
 	expand-region
 	multiple-cursors
 	orderless
-	magit))
+	magit
+	exec-path-from-shell))
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (load-theme 'leuven)
+(tool-bar-mode -1)
 
 (setq mac-option-key-is-meta nil
       mac-command-key-is-meta t
@@ -56,7 +61,7 @@
 (use-package consult
   :bind
   ("C-c s" . consult-line)
-  ("C-c g" . consult-git-grep))
+  ("C-c g" . consult-ripgrep))
 
 (use-package vertico
   :init (vertico-mode))
