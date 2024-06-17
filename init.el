@@ -5,6 +5,9 @@
       '(vertico
 	use-package
 	consult
+	embark
+	embark-consult
+	marginalia
 	expand-region
 	multiple-cursors
 	orderless
@@ -70,3 +73,22 @@
   :init (vertico-mode))
 
 (use-package magit)
+
+(use-package marginalia
+  :config
+  (marginalia-mode))
+
+(use-package embark
+  :bind
+  (("C--" . embark-act)
+   ("M--" . embark-dwim)
+   ("C-h B" . embark-bindings))
+  :config
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
+(use-package embark-consult
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
