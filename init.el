@@ -1,6 +1,7 @@
 (require 'package)
 
 ;; run (package-install-selected-packages)
+
 (setq package-selected-packages
       '(vertico
 	use-package
@@ -12,6 +13,7 @@
 	multiple-cursors
 	orderless
 	magit
+	wgrep
 	exec-path-from-shell))
 
 (when (memq window-system '(mac ns x))
@@ -92,3 +94,5 @@
 (use-package embark-consult
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
+
+(use-package wgrep)
